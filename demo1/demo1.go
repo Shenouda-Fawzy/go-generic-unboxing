@@ -1,6 +1,8 @@
+// Package demo1 contain all generic Funcs
 package demo1
 
 
+// K comparable is predeclared by Go itself, which require the map key to be comparable
 func SumIntsOrFloats[K comparable, V int64 | float64](m map[K]V) V {
     var s V
     for _, v := range m {
@@ -9,20 +11,16 @@ func SumIntsOrFloats[K comparable, V int64 | float64](m map[K]V) V {
     return s
 }
 
-// SumInts adds together the values of m.
-func SumInts(m map[string]int64) int64 {
-	var s int64
-	for _, v := range m {
-		s += v
-	}
-	return s
+
+// Type constrint
+type Number interface {
+	float64 | int64  
 }
 
-// SumFloats adds together the values of m.
-func SumFloats(m map[string]float64) float64 {
-	var s float64
-	for _, v := range m {
-		s += v
-	}
-	return s
+func SumGeneric[K comparable, V Number](m map[K]V) V {
+    var s V
+    for _, v := range m {
+        s += v
+    }
+    return s
 }
