@@ -1,5 +1,5 @@
 # Go generic
-This repo contain basic demo for installing and running go1.18beta1 version.
+This repo contain basic demo for installing and running go1.18beta1 version which uses the official tutorial of [Go: Getting started with generics](https://go.dev/doc/tutorial/generics)
 
 ## Installation
 If you have go already installed then you need to do only two steps:
